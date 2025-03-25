@@ -42,3 +42,17 @@ function constructNewProposal(categoryID: number, title: string, description: st
 
     return aProposal;
 }
+
+export function statusString(proposalState: ProposalState): string {
+    let returnValue = ""
+    switch (proposalState) {
+        case ProposalState.ACCEPTED:
+            returnValue = "УСВОЈЕН"; break;
+        case ProposalState.DENIED:
+            returnValue = "ОДБИЈЕН"; break;
+        case ProposalState.IN_PROGRESS:
+            returnValue = "У ИЗГЛАСАВАЊУ"; break;
+    }
+
+    return returnValue;
+}
