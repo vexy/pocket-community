@@ -24,7 +24,14 @@
 
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
 
         background-color: beige;
+    }
+
+    a {
+        margin-inline: 5px;
+        width: min-content;
+        --webkit-line-clamp: 1;
     }
 </style>

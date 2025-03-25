@@ -57,49 +57,23 @@ const other: Category = {
     favicon: "",
 }
 
+// temporal container with all possible categories
+let allCategories = [
+    schools,
+    healthcare,
+    economy,
+    science,
+    sports,
+    environment,
+    culture,
+    other
+]
+
 export function getAllCategories(): Category[] {
-    return [
-        schools,
-        healthcare,
-        economy,
-        science,
-        sports,
-        environment,
-        culture,
-        other
-    ]
+    return allCategories
 }
 
-//TODO: Refactor if needed
-export function getCategoryBySlug(slug: string): Category {
-    let chosenCategory: Category;
-
-    switch (slug) {
-        case "schools":
-            chosenCategory = schools;
-            break;
-        case 'healthcare':
-            chosenCategory = healthcare;
-            break;
-        case 'economy':
-            chosenCategory = economy;
-            break;
-        case 'science':
-            chosenCategory = science;
-            break;
-        case 'sports':
-            chosenCategory = sports;
-            break;
-        case 'environment':
-            chosenCategory = environment;
-            break;
-        case 'culture':
-            chosenCategory = culture;
-            break;
-        case 'other':
-            chosenCategory = other
-            break;
-    }
-
-    return chosenCategory;
+export function getCategory(slug: string): Category | undefined {
+    let chosenCategory = allCategories.find((cat) => { return cat.slug === slug })
+    return chosenCategory
 }

@@ -1,10 +1,9 @@
 import type { LayoutServerLoad } from './$types';
 import type { Category } from '$models/Category';
-import { getCategoryBySlug } from '$lib/CategoriesService';
+import { getCategory } from '$lib/CategoriesService';
 
 export const load = (async ( { params } ) => {
-    // console.log("Selected category: ", params.category)
-    const selectedCategory: Category = getCategoryBySlug(params.category)
+    const selectedCategory: Category = getCategory(params.category)
 
     return {
         selectedCategory
