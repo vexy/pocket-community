@@ -1,11 +1,11 @@
-# Your Community
+# Pocket Community
 
 This repo contains source code for a website dedicated to any community (aka citizens of a state). Purpose of the platform is to provide unobstructed communication and participation of every member of the community.
 
 Platform is written in `TypeScript` using `SvelteKit`.
 
-**NOTE:**  
-Platform isn't dedicated to political parties nor anyhow connected to the governments of particular region/state. Platform authors strongly believe that "modern" political systems are outdated and does not serve the purpose any more.
+> [!NOTE]  
+> Platform isn't dedicated to political parties **nor anyhow connected to the governments of particular region/state**. Platform authors strongly believe that "modern" political systems are outdated and does not serve the purpose any more.
 
 ## Platform features
 
@@ -49,3 +49,6 @@ Follow our Discord channel for updates and further discussion.
 
 #### Current contributors
 - [Vexy](https://github.com/vexy)
+
+## LICENSE
+Pocket Community Copyright (C) 2025 Veljko Tekelerovic
