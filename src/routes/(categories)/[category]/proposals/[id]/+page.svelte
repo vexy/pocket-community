@@ -1,13 +1,17 @@
 <script lang="ts">
+    import type { PageData } from './$types';
+    import VoteButtons from '$components/VoteButtons.svelte';
     import { statusString } from '$lib/ProposalService';
     import { ProposalState } from '$models/Proposal';
-    import type { PageData } from './$types';
 
     let { data }: { data: PageData } = $props();
     let proposal = data.chosenProposal;
 
-    function processVote() {
+    let voteOption = $state(0);
+
+    function processVote(option: number) {
         //TODO: Process vote for this proposal
+        voteOption = option;
         
         //show dummy alert dialog
         showDialog(true)
@@ -26,6 +30,7 @@
 
 <dialog id="dialogBox">
     <p>Хвала што сте гласали !</p>
+    <p>Ваш избор је: {voteOption}</p>
 
     <button onclick={() => showDialog(false)}>Затвори</button>
 </dialog>
@@ -42,9 +47,11 @@
 
 <summary>
     {#if proposal?.state === ProposalState.IN_PROGRESS}
-        <button onclick={processVote}>За 👍</button>
-        <button onclick={processVote}>Против 👎</button>
-        <button onclick={processVote}>Уздржано 😶</button>
+        <VoteButtons
+            infavour={() => processVote(0)}
+            against={() => processVote(1)}
+            sustain={() => processVote(2)}
+        />
     {:else}
         <div>
             <span>За: { proposal?.scores.for.toLocaleString() }</span>
