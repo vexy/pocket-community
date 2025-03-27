@@ -6,20 +6,28 @@
 
 <h1>Радна група за: { data.selectedCategory.title }</h1>
 
-<ul>
-    {#each data.members as member }
-        <li>
-            <a href="/{data.selectedCategory.slug}/members/{member.id}">
-                <span>{ member.title }</span>
-                <span>{ member.name }</span>
-                <span>{ member.lastName }</span>
-            </a>
-        </li>
-    {/each}
-</ul>
+<section>
+    <ul>
+        {#each data.members as member }
+            <li>
+                <a href="/{data.selectedCategory.slug}/members/{member.id}">
+                    <span>{ member.title }</span>
+                    <span>{ member.name }</span>
+                    <span>{ member.lastName }</span>
+                </a>
+            </li>
+        {/each}
+    </ul>
 
-<p>
-    <b>НАПОМЕНА: </b>
-    <span>Личности су фиктивне и служе у илустративне сврхе.</span>
-    <span>Свака сличност са стварним особама нема за циљ њихову личну промоцију нити деградацију.</span>
-</p>
+    <p>Укупно чланова: { data.members.length }</p>
+
+    <a class="button-link" href="/{data.selectedCategory.slug}/members/new">Додајте члана</a>
+</section>
+
+<style>
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+</style>

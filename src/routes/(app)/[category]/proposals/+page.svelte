@@ -1,4 +1,5 @@
 <script lang="ts">
+    import ProposalsTable from '$components/ProposalsTable.svelte';
     import type { PageProps } from './$types';
 
     let { data }: PageProps = $props();
@@ -7,51 +8,30 @@
     let currentSlug = currentCategory.slug
 </script>
 
-<h1>{ currentCategory.title }</h1>
+<h2>Листа предлога за усвајање</h2>
+<h3>Категорија: { currentCategory.title }</h3>
 
-<a href="/{currentSlug}/proposals/new">+ Нови предлог</a>
+<ProposalsTable
+  proposals={data.activeProposals}
+  currentSlug={currentSlug}
+  showStatus={false}
+/>
 
-<table>
-    <caption>
-        Листа предлога за усвајање
-    </caption>
-
-    <thead>
-      <tr>
-        <th scope="col">Предлог</th>
-        <th scope="col">Датум</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      {#each data.activeProposals as proposal }
-        <tr>
-          <td><a href="/{currentSlug}/proposals/{proposal.id}" >{ proposal.title }</a></td>
-          <td>{proposal.date.toLocaleDateString()}</td>
-        </tr>
-      {/each}      
-    </tbody>
-
-    <tfoot>
-      <tr>
-        <th scope="row" colspan="2">Укупно предлога</th>
-        <td colspan="2">{data.activeProposals.length.toLocaleString()}</td>
-      </tr>
-    </tfoot>
-</table>
+<section>
+  <a class="button-link" href="/{currentSlug}/proposals/new">Додајте нови предлог</a>
+  <a class="button-link" href="/{currentSlug}/historical">Усвојени предлози</a>
+</section>
 
 <style>
-  table {
-    margin-top: 3rem;
-    width: 100%;
-    border: 1px solid black;
+  section {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
   }
 
-  caption {
-    font-size: 1.3rem;
-  }
-
-  td:nth-child(2) {
-    text-align: right;
-  }
+  /* section a {
+    padding: 0.5rem;
+    background-color: #7ba49c;
+  } */
 </style>

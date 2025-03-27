@@ -4,27 +4,43 @@
     let { data }: { data: PageData } = $props();
 </script>
 
-<h1>New proposal for: { data.selectedCategory.title }</h1>
+<section>
+    <h1>Нови предлог</h1>
+    <h4>Категорија: { data.selectedCategory.title }</h4>
 
-<form method="POST" action="?/submitProposal">
-    <label for="title">Унесите наслов предлога</label>
-    <input type="text" placeholder="Наслов" id="title" name="title"/>
-    
-    
-    <label for="details">Унесите опис предлога</label>
-    <input type="text" placeholder="Опис" class="proposal-details" id="details" name="description"/>
+    <form method="POST" action="?/submitProposal">
+        <label for="title">Наслов:</label>
+        <input type="text" placeholder="Унесите наслов предлога" id="title" name="title"/>
+        
+        <label for="details">Опис предлога:</label>
+        <textarea placeholder="Унесите опис предлога. До 3000 карактера..." class="proposal-details" id="details" name="description"></textarea>
 
-    <button type="submit">Пошаљи</button>
-</form>
+        <button type="submit">Пошаљи</button>
+    </form>
+</section>
 
 <style>
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     form {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        width: 80%;
+        gap: 0.5rem;
+    }
+
+    button {
+        align-self: center;
     }
 
     .proposal-details {
-        min-height: 300px;
+        font-family: inherit;
+        font-size: inherit;
+        text-rendering: inherit;
+        min-height: 250px;
     }
 </style>
