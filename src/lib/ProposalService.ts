@@ -3,7 +3,7 @@ import { loadDummyProposals } from "./dummyProposals";
 
 // container of all available proposals
 let allProposals: Proposal[] = loadDummyProposals();
-let lastIndex = 25;
+let lastIndex = 26;
 
 export function getCategoryProposals(categoryID: number, inState: ProposalState): Proposal[] {
     const categoryProposals = allProposals.filter((proposal) => {

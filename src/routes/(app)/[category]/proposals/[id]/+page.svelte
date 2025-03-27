@@ -45,6 +45,25 @@
     { proposal?.description }
 </section>
 
+<details>
+    <summary>Радна група</summary>
+    {#if proposal?.members.length === 0}
+        <p>Предложите радну групу</p>
+    {:else}
+        <ul>
+            {#each proposal.members as member }
+                <li>
+                    <a href="/{data.selectedCategory.slug}/members/{member.id}">
+                        <span>{ member.title }</span>
+                        <span>{ member.name }</span>
+                        <span>{ member.lastName }</span>
+                    </a>
+                </li>
+            {/each}
+        </ul>
+    {/if}
+</details>
+
 <summary>
     {#if proposal?.state === ProposalState.IN_PROGRESS}
         <VoteButtons
@@ -69,6 +88,12 @@
     section {
         min-height: 250px;
         border: 0.5px solid black
+    }
+
+    details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     summary {

@@ -192,3 +192,27 @@ export function loadDummyMembers(): Member[] {
         member_sp1, member_sp2, member_sp3,
     ]
 }
+
+export function loadSchoolMembers(): Member[] {
+    return [
+        member_sch, member_sch2, member_sch3, member_sch4, member_sch5, member_sch6, member_sch7
+    ]
+}
+
+export function loadHelthcareMembers(): Member[] {
+    return [
+        member_hc1, member_hc2, member_hc3, member_hc4
+    ]
+}
+
+export function loadEconomyMembers(): Member[] {
+    return [
+        member_ecc1, member_ecc2, member_ecc3, member_ecc4
+    ]
+}
+
+export function loadSportMembers(): Member[] {
+    return [
+        member_sp1, member_sp2, member_sp3
+    ]
+}

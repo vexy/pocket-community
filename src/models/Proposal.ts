@@ -1,3 +1,5 @@
+import type { Member } from "./Member"
+
 export interface Proposal {
     id: number,
     categoryID: number,
@@ -5,7 +7,8 @@ export interface Proposal {
     description: string,
     scores: ProposalScores,
     state: ProposalState,
-    date: Date
+    date: Date,
+    members: Member[]
 }
 
 interface ProposalScores {
