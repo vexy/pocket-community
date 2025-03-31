@@ -45,6 +45,8 @@
     { proposal?.description }
 </section>
 
+<p>Процењени трошкови: { proposal?.budget.toLocaleString() }</p>
+
 <details>
     <summary>Радна група</summary>
     {#if proposal?.members.length === 0}

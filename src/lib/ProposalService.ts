@@ -22,12 +22,12 @@ export function getProposal(id: number): Proposal | undefined {
     return foundProposal
 }
 
-export function addNewProposal(categoryID: number, title: string, description: string) {
-    const newProposal = constructNewProposal(categoryID, title, description)
+export function addNewProposal(categoryID: number, title: string, description: string, budget: number) {
+    const newProposal = constructNewProposal(categoryID, title, description, budget);
     allProposals.push(newProposal)
 }
 
-function constructNewProposal(categoryID: number, title: string, description: string): Proposal {
+function constructNewProposal(categoryID: number, title: string, description: string, budget: number): Proposal {
     lastIndex++
 
     const aProposal: Proposal = {
@@ -35,9 +35,11 @@ function constructNewProposal(categoryID: number, title: string, description: st
         categoryID: categoryID,
         title: title,
         description: description,
+        budget: budget,
         scores: { for: 0, against: 0, sustained: 0},
         state: ProposalState.IN_PROGRESS,
-        date: new Date
+        date: new Date,
+        members: []
     }
 
     return aProposal;

@@ -1,18 +1,31 @@
 <script lang="ts">
     import { statusString } from "$lib/ProposalService";
-    import type { Proposal } from "$models/Proposal";
+    import { ProposalState, type Proposal } from "$models/Proposal";
 
     let { proposals, currentSlug, showStatus }: { proposals: Proposal[], currentSlug: string, showStatus: boolean } = $props()
+
+    // Function will sumup all the proposals budget that are either
+    // in accepted or in progress state
+    function totalCosts(): number {
+      let initialValue = 0
+      const totalSum = proposals.reduce(
+        (prevoious, current) =>
+          prevoious + (current.state != ProposalState.DENIED ? current.budget : 0), initialValue
+      );
+
+      return totalSum
+    }
 </script>
 
 <table>
     <thead>
       <tr>
-        <th scope="col">Предлог</th>
-        <th scope="col">Датум</th>
+        <th>Предлог</th>
+        <th>Датум</th>
         {#if showStatus}
-            <th scope="col">Статус</th>
+          <th>Статус</th>
         {/if}
+        <th>Трошкови увођења</th>
       </tr>
     </thead>
 
@@ -24,14 +37,19 @@
           {#if showStatus}
             <td class="centered-text">{ statusString(proposal.state) }</td>
           {/if}
+          <td class="right-centered">{ proposal.budget.toLocaleString() }</td>
         </tr>
       {/each}      
     </tbody>
 
     <tfoot>
       <tr>
-        <th scope="row" colspan={ showStatus ? 2 : 1 }>Укупно предлога</th>
-        <td style="text-align: right;">{proposals.length.toLocaleString()}</td>
+        <th scope="row" colspan={ showStatus ? 3 : 2 }>Укупни трошкови</th>
+        <td class="right-centered">{totalCosts().toLocaleString()}</td>
+      </tr>
+      <tr>
+        <th scope="row" colspan={ showStatus ? 3 : 2 }>Укупно предлога</th>
+        <td class="right-centered">{proposals.length.toLocaleString()}</td>
       </tr>
     </tfoot>
 </table>
@@ -55,5 +73,9 @@
 
     .centered-text {
         text-align: center;
+    }
+
+    .right-centered {
+      text-align: right;
     }
 </style>

@@ -5,6 +5,7 @@ export interface Proposal {
     categoryID: number,
     title: string,
     description: string,
+    budget: number,
     scores: ProposalScores,
     state: ProposalState,
     date: Date,

@@ -7,6 +7,7 @@ const proposal1: Proposal = {
     categoryID: 1,
     title: "Увођење предмета ”Кување” у основне школе",
     description: "Увођење предмета који учи основе припреме хране и има за циљ повећање способности особа у свакодневном животу",
+    budget: 1450000,
     scores: {
         for: 223456,
         against: 156,
@@ -22,6 +23,7 @@ const proposal2: Proposal = {
     categoryID: 1,
     title: "Базени у основним и средњим школама",
     description: "Предлог за изградњу пливалишта у свим школским установама у земљи",
+    budget: 250000,
     scores: {
         for: 7265,
         against: 419,
@@ -37,6 +39,7 @@ const proposal3: Proposal = {
     categoryID: 1,
     title: "Промена наставног програма",
     description: "Предлог за промену наставног програма. (Детаљи ће бити приказани овде)",
+    budget: 2500000,
     scores: {
         for: 11304,
         against: 807,
@@ -52,6 +55,7 @@ const proposal4: Proposal = {
     categoryID: 1,
     title: "Избацивање историје из наставног програма",
     description: "Овај предлог има за циљ уклањање изучавања Србске историје из наставног програма.",
+    budget: 700000,
     scores: {
         for: 11304,
         against: 2534809,
@@ -68,6 +72,7 @@ const proposal_hc_1: Proposal = {
     categoryID: 2,
     title: "Смањење листе чекања за операције кука",
     description: "Предлог за смањење времена проведеног до операције....",
+    budget: 14750000,
     scores: {
         for: 1245800,
         against: 901,
@@ -83,6 +88,7 @@ const proposal_hc_2: Proposal = {
     categoryID: 2,
     title: "Изградња новог породилишта у Сопоту",
     description: "Детаљи предлога ће бити приказани овде...",
+    budget: 3850000,
     scores: {
         for: 18300,
         against: 331,
@@ -98,6 +104,7 @@ const proposal_hc_3: Proposal = {
     categoryID: 2,
     title: "Набавка 3 нова Гама ножа",
     description: "Предлог за расписивање тендера о набавци Гама ножева од страних произвођача",
+    budget: 650000,
     scores: {
         for: 18300,
         against: 331,
@@ -113,6 +120,7 @@ const proposal_hc_4: Proposal = {
     categoryID: 2,
     title: "Дечије клинике",
     description: "Предлог за повећање броја специјализованих дечијих клиника у целој земљи",
+    budget: 1000000,
     scores: {
         for: 245931,
         against: 1094,
@@ -129,6 +137,7 @@ const proposal_ec_1: Proposal = {
     categoryID: 3,
     title: "Смањење пореских стопа",
     description: "Предлог за растерећење пореских давања у свим економским делатностима",
+    budget: 2000000,
     scores: {
         for: 146245,
         against: 3207,
@@ -144,6 +153,7 @@ const proposal_ec_2: Proposal = {
     categoryID: 3,
     title: "Порекло имовине",
     description: "Увођење строжијих правила о пореклу имовине...",
+    budget: 0,
     scores: {
         for: 2301433,
         against: 302865,
@@ -159,6 +169,7 @@ const proposal_ec_3: Proposal = {
     categoryID: 3,
     title: "Повећање пореских стопа",
     description: "Предлог за повећање пореских стопа са 10% на 15%",
+    budget: 0,
     scores: {
         for: 894561,
         against: 3254911,
@@ -174,6 +185,7 @@ const proposal_ec_4: Proposal = {
     categoryID: 3,
     title: "Увођење задруга",
     description: "Предлог за увођење задруга у пољопривреди",
+    budget: 3170000,
     scores: {
         for: 245931,
         against: 1094,
@@ -190,6 +202,7 @@ const proposal_sc_1: Proposal = {
     categoryID: 4,
     title: "Научна конференција о новим методама лечења рака",
     description: "Предлог за организовање међународне конференције у Вршцу, која окупља лекаре из разних земаља...",
+    budget: 5000000,
     scores: {
         for: 146245,
         against: 3207,
@@ -205,6 +218,7 @@ const proposal_sc_2: Proposal = {
     categoryID: 4,
     title: "Курсеви о нано технологијама",
     description: "Предлог за организовање учесталих курсева на тему развоја технологија у нано скали.",
+    budget: 280000,
     scores: {
         for: 2301433,
         against: 302865,
@@ -220,6 +234,7 @@ const proposal_sc_3: Proposal = {
     categoryID: 4,
     title: "Наставак постојања Академије наука",
     description: "У овом предлогу покушавамо да сачувамо постојање Академије наука",
+    budget: 0,
     scores: {
         for: 14506,
         against: 4905761,
@@ -235,6 +250,7 @@ const proposal_sc_4: Proposal = {
     categoryID: 4,
     title: "Неки научни предлог...",
     description: "Детаљи предлога су приказани овде...",
+    budget: 0,
     scores: {
         for: 245931,
         against: 1094,
@@ -251,6 +267,7 @@ const sports_1: Proposal = {
     categoryID: 5,
     title: "Изградња кошаркашких терена",
     description: "Предлог за изградњу нових кошаркашких терена",
+    budget: 900000,
     scores: {
         for: 4814500,
         against: 940112,
@@ -266,6 +283,7 @@ const sports_2: Proposal = {
     categoryID: 5,
     title: "Укидање стаза за трчање",
     description: "Предлог за уклањање стаза за трчање",
+    budget: 2350000,
     scores: {
         for: 5803,
         against: 2911680,
@@ -281,6 +299,7 @@ const sports_3: Proposal = {
     categoryID: 5,
     title: "Организација светског првенства у уметничком клизању",
     description: "Предлог за организовање међународног такмичења у уметничком клизању у Јагодини",
+    budget: 2750800,
     scores: {
         for: 3734558,
         against: 1004681,
@@ -296,6 +315,7 @@ const sports_4: Proposal = {
     categoryID: 5,
     title: "Организација светског првенства у фудбалу",
     description: "Кандидатура за организовање светског фудбалског првенства у Србији",
+    budget: 14250000,
     scores: {
         for: 3734558,
         against: 1004681,
@@ -312,6 +332,7 @@ const env_1: Proposal = {
     categoryID: 6,
     title: "Нуклеарни отпад",
     description: "Предлог за елиминацију нуклеарног отпада из земље...",
+    budget: 5680000,
     scores: {
         for: 3109763,
         against: 201500,
@@ -327,6 +348,7 @@ const env_2: Proposal = {
     categoryID: 6,
     title: "Пројекат ”Јакад”",
     description: "Предлог за отпочињање ископавања волфрама из рудника Србије",
+    budget: 8000000,
     scores: {
         for: 14206,
         against: 4380751,
@@ -342,6 +364,7 @@ const env_3: Proposal = {
     categoryID: 6,
     title: "Увођење строжијих еколошких стандарда",
     description: "Предлог за увођење строжијих еколошких норми у областима прераде метала.",
+    budget: 0,
     scores: {
         for: 3734558,
         against: 1004681,
@@ -358,6 +381,7 @@ const culture_1: Proposal = {
     categoryID: 7,
     title: "Снимање ТВ серије о Светом Сави",
     description: "Предлог за отпочињање снимања ТВ серије у више сезона...",
+    budget: 2500000,
     scores: {
         for: 3109763,
         against: 1201500,
@@ -373,6 +397,7 @@ const culture_2: Proposal = {
     categoryID: 7,
     title: "Изградња новог позоришта у Краљеву",
     description: "Предлог за изградњу новог позоришта у центру Краљева...",
+    budget: 3000000,
     scores: {
         for: 5734901,
         against: 309,
@@ -388,6 +413,7 @@ const culture_3: Proposal = {
     categoryID: 7,
     title: "Реконструкција Културног центра у Ваљеву",
     description: "Предлог за унапређење услова у области културе у Ваљеву",
+    budget: 3000000,
     scores: {
         for: 3734558,
         against: 1004681,
@@ -404,6 +430,7 @@ const other_1: Proposal = {
     categoryID: 8,
     title: "Уређење паркова за псе",
     description: "Предлог за побољшање паркова за кућне љубимце",
+    budget: 750000,
     scores: {
         for: 3109763,
         against: 1201500,
@@ -419,6 +446,7 @@ const other_2: Proposal = {
     categoryID: 8,
     title: "Увођење борилачких вештина у основне школе",
     description: "Детаљи предлога су приказани овде....",
+    budget: 250000,
     scores: {
         for: 3109763,
         against: 1201500,
@@ -434,6 +462,7 @@ const other_3: Proposal = {
     categoryID: 8,
     title: "Реконструкција Ботаничког центра у Чачку",
     description: "Предлог за реконструкцију....",
+    budget: 710000,
     scores: {
         for: 3109763,
         against: 1201500,

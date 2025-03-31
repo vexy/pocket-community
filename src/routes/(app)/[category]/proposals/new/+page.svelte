@@ -15,6 +15,9 @@
         <label for="details">Опис предлога:</label>
         <textarea placeholder="Унесите опис предлога. До 3000 карактера..." class="proposal-details" id="details" name="description"></textarea>
 
+        <label for="budget">Трошкови:</label>
+        <input type="number" placeholder="Унесите процену трошкова" id="budget" name="budget"/>
+
         <button type="submit">Пошаљи</button>
     </form>
 </section>
@@ -41,6 +44,6 @@
         font-family: inherit;
         font-size: inherit;
         text-rendering: inherit;
-        min-height: 250px;
+        min-height: 220px;
     }
 </style>
