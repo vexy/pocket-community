@@ -246,7 +246,7 @@ const proposal_sc_3: Proposal = {
 }
 
 const proposal_sc_4: Proposal = {
-    id: 12,
+    id: 16,
     categoryID: 4,
     title: "Неки научни предлог...",
     description: "Детаљи предлога су приказани овде...",
@@ -263,7 +263,7 @@ const proposal_sc_4: Proposal = {
 
 // SPORTS proposals
 const sports_1: Proposal = {
-    id: 13,
+    id: 17,
     categoryID: 5,
     title: "Изградња кошаркашких терена",
     description: "Предлог за изградњу нових кошаркашких терена",
@@ -279,7 +279,7 @@ const sports_1: Proposal = {
 }
 
 const sports_2: Proposal = {
-    id: 14,
+    id: 18,
     categoryID: 5,
     title: "Укидање стаза за трчање",
     description: "Предлог за уклањање стаза за трчање",
@@ -295,7 +295,7 @@ const sports_2: Proposal = {
 }
 
 const sports_3: Proposal = {
-    id: 15,
+    id: 19,
     categoryID: 5,
     title: "Организација светског првенства у уметничком клизању",
     description: "Предлог за организовање међународног такмичења у уметничком клизању у Јагодини",
@@ -311,7 +311,7 @@ const sports_3: Proposal = {
 }
 
 const sports_4: Proposal = {
-    id: 26,
+    id: 20,
     categoryID: 5,
     title: "Организација светског првенства у фудбалу",
     description: "Кандидатура за организовање светског фудбалског првенства у Србији",
@@ -328,7 +328,7 @@ const sports_4: Proposal = {
 
 // ENVIRONMENT proposals
 const env_1: Proposal = {
-    id: 16,
+    id: 21,
     categoryID: 6,
     title: "Нуклеарни отпад",
     description: "Предлог за елиминацију нуклеарног отпада из земље...",
@@ -344,7 +344,7 @@ const env_1: Proposal = {
 }
 
 const env_2: Proposal = {
-    id: 17,
+    id: 22,
     categoryID: 6,
     title: "Пројекат ”Јакад”",
     description: "Предлог за отпочињање ископавања волфрама из рудника Србије",
@@ -360,7 +360,7 @@ const env_2: Proposal = {
 }
 
 const env_3: Proposal = {
-    id: 18,
+    id: 23,
     categoryID: 6,
     title: "Увођење строжијих еколошких стандарда",
     description: "Предлог за увођење строжијих еколошких норми у областима прераде метала.",
@@ -377,7 +377,7 @@ const env_3: Proposal = {
 
 // CULTURE proposals
 const culture_1: Proposal = {
-    id: 19,
+    id: 24,
     categoryID: 7,
     title: "Снимање ТВ серије о Светом Сави",
     description: "Предлог за отпочињање снимања ТВ серије у више сезона...",
@@ -393,7 +393,7 @@ const culture_1: Proposal = {
 }
 
 const culture_2: Proposal = {
-    id: 20,
+    id: 25,
     categoryID: 7,
     title: "Изградња новог позоришта у Краљеву",
     description: "Предлог за изградњу новог позоришта у центру Краљева...",
@@ -409,7 +409,7 @@ const culture_2: Proposal = {
 }
 
 const culture_3: Proposal = {
-    id: 21,
+    id: 26,
     categoryID: 7,
     title: "Реконструкција Културног центра у Ваљеву",
     description: "Предлог за унапређење услова у области културе у Ваљеву",
@@ -426,7 +426,7 @@ const culture_3: Proposal = {
 
 // OTHER proposals
 const other_1: Proposal = {
-    id: 22,
+    id: 27,
     categoryID: 8,
     title: "Уређење паркова за псе",
     description: "Предлог за побољшање паркова за кућне љубимце",
@@ -442,7 +442,7 @@ const other_1: Proposal = {
 }
 
 const other_2: Proposal = {
-    id: 23,
+    id: 28,
     categoryID: 8,
     title: "Увођење борилачких вештина у основне школе",
     description: "Детаљи предлога су приказани овде....",
@@ -458,7 +458,7 @@ const other_2: Proposal = {
 }
 
 const other_3: Proposal = {
-    id: 24,
+    id: 29,
     categoryID: 8,
     title: "Реконструкција Ботаничког центра у Чачку",
     description: "Предлог за реконструкцију....",

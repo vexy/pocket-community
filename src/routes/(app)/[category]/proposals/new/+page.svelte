@@ -17,6 +17,15 @@
 
         <label for="budget">Трошкови:</label>
         <input type="number" placeholder="Унесите процену трошкова" id="budget" name="budget"/>
+        
+        <label for="people">Радна група:</label>
+        <ul>
+        {#each data.categoryMembers as aMember }
+            <div>
+                <input type="checkbox" id="people" name="people" value={aMember.id}/>{ aMember.name } { aMember.lastName }
+            </div>
+        {/each}
+        </ul>
 
         <button type="submit">Пошаљи</button>
     </form>

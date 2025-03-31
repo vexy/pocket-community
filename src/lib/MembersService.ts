@@ -22,6 +22,17 @@ export function getMember(id: number): Member | undefined {
     return foundMember
 }
 
+/**
+ * Function returns all members for this category (both in ACTIVE and CANDIDATE state)
+ * @param id CategoryID to look for
+ */
+export function getCategoryMembers(id: number): Member[] {
+    const members = getMembers(id, MemberStatus.ACTIVE)
+    const candidates = getMembers(id, MemberStatus.CANDIDATE)
+
+    return members.concat(candidates);
+}
+
 export function addNewMember(title: string, name: string, lastName: string, biography: string, caetgoryID: number) {
     const newMember = constructNewMemberObject(title, name, lastName, biography, caetgoryID);
     allMembers.push(newMember);
