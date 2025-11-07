@@ -1,8 +1,7 @@
 # Pocket Community
 
-This repo contains source code for a website dedicated to any community (aka citizens of a state). Purpose of the platform is to provide unobstructed communication and participation of every member of the community.
-
-Platform is written in `TypeScript` using `SvelteKit`.
+This repository contains source code for a website platorm dedicated to any type community (aka group of people).  
+Purpose of the platform is to provide unobstructed communication and inclusive participation of every member of the community in a decision making process.
 
 > [!NOTE]  
 > Platform isn't dedicated to political parties **nor anyhow connected to the governments of particular region/state**. Platform authors strongly believe that "modern" political systems are outdated and does not serve the purpose any more.
@@ -19,9 +18,8 @@ Platform provides following features:
 - anonymous usage
 - open source
 
-## Developing
-
-For development, [`bun package manager`](https://bun.sh/) is needed. Make sure you have `bun` installed on your machine before running the dev server.
+## Technical description
+Platform is written in `TypeScript` using `SvelteKit` framework. It uses [`bun package manager`](https://bun.sh/) to manage dependencies. Make sure you have `bun` installed on your machine before running the dev server.
 
 Follow these steps to run the development version locally:
 
@@ -30,19 +28,19 @@ Follow these steps to run the development version locally:
 bun install
 
 # to start the server and open the app in a new browser tab
-bun run dev -- --open
+bun run dev
 ```
 
-To create _production_ version of the platfrom, run:
+To create **production** version of the platfrom, run:
 
 ```bash
 bun run build
 ```
 
-## Contributing
-... is more than welcome 🙏 Thank you in advance.
+Icons and imagery provided by [SVG repo](https://www.svgrepo.com/).
 
-Follow our Discord channel for updates and further discussion.
+# Contributing
+... is more than welcome 🙏 Thank you in advance.
 
 > [!NOTE]  
 > Discord server is yet to be created.
@@ -50,5 +48,7 @@ Follow our Discord channel for updates and further discussion.
 #### Current contributors
 - [Vexy](https://github.com/vexy)
 
-## LICENSE
-Pocket Community Copyright (C) 2025 Veljko Tekelerovic
+# LICENSE
+Copyright (C) 2025 Pocket Community by Veljko Tekelerovic  
+
+**PGP**: `5BC7030E A0380EA4 BB8A470E 9F4475B4 CF37D56A`

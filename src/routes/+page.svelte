@@ -1,14 +1,23 @@
 <script lang="ts">
-    import type { PageProps } from './$types';
+    import type { LayoutProps } from './$types';
     import '$styles/main.css'
+    import Footer from '$components/Footer.svelte';
 
-    let { data }: PageProps = $props();
+    const { data }: LayoutProps = $props();
 </script>
+
+<img
+    class="logo"
+    src="/favicon.svg" 
+    alt="Community logo"
+    width="175px"
+    height="175px"
+/>
 
 <h1>Добродошли у вашу заједницу</h1>
 
 <section>
-    <p>Изаберите категорију:</p>
+    <p>Изаберите категорију од интереса:</p>
 
     <ul>
         {#each data.allCategories as category }
@@ -18,33 +27,38 @@
             </li>
         {/each}
     </ul>
+
+    <a class='learn-more' href="/learn-more">
+        <img src="/learn-more.svg" alt="Learn more" height="20px" />
+        <span>Сазнај више о платформи</span>
+    </a>
 </section>
 
-<footer>
-    <img src="/info.svg" alt="Info" />
-    <span>
-        <b>Напомена:</b>
-        <span>Платформа је у активној изради и тренутно је у</span>
-        <i>ПРОБНОЈ ВЕРЗИЈИ</i><br>
-        <span>Унос нових података или интеракција са деловима сајта неће бити трајно запамћена</span>
-    </span>
-</footer>
+<Footer isLeading={true}/>
 
 <style>
+    .logo {
+        margin-top: 2.5rem;
+        align-self: center;
+    }
+
     section {
         align-self: center;
         flex-grow: 1;
     }
 
-    footer {
+    .learn-more {
+        margin-top: 2.5rem;
+        width: 100%;
         display: flex;
         align-items: center;
-        padding: 10px;
-        background-color: bisque;
+        justify-content: center;
+        text-align: center;
+        text-decoration: none;
+        gap: 0.35rem;
     }
 
-    img {
-        height: 40px;
-        margin-right: 1rem;
+    .learn-more:hover {
+        scale: 1.1;
     }
 </style>
