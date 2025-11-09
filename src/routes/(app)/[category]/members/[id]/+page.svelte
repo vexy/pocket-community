@@ -31,43 +31,40 @@
     <button onclick={() => showDialog(false)}>Затвори</button>
 </dialog>
 
-<section>
-    <img src="/person.svg" alt="Person profile"/>
+<img class='candidate-image' src="/person.svg" alt="Person profile"/>
 
-    <h3>
-        <span>{ data.memberData?.title }</span>
-        <span>{ data.memberData?.name }</span>
-        <span>{ data.memberData?.lastName }</span>
-    </h3>
+<h2>
+    <span>{ data.memberData?.title }</span>
+    <span>{ data.memberData?.name }</span>
+    <span>{ data.memberData?.lastName }</span>
+</h2>
 
-    <p>Радна биографија:</p>
-    <summary>
+<summary>
+    <div>
+        <h3>Радна биографија</h3>
         { data.memberData?.biography }
-    </summary>
+    </div>
 
     {#if data.memberData?.status === MemberStatus.ACTIVE}
-        <p>Члан радне група за: <i>{ data.selectedCategory.title }</i></p>
+        <p>Члан радне групе у категорији: <i>{ data.selectedCategory.title }</i></p>
     {:else}
-        <p>Кандидат радне група за: <i>{ data.selectedCategory.title }</i></p>
+        <p>Кандидат радне групе у категорији: <i>{ data.selectedCategory.title }</i></p>
 
-        <span>Опција за изгласавање кандидата:</span>
         <VoteButtons
             infavour={() => processVote(0)}
             against={() => processVote(1)}
             sustain={() => processVote(2)}
         />
     {/if}
-</section>
+</summary>
 
 <style>
-    section {
-        margin-top: 3rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    summary {
+        margin-left: 1.25rem;
     }
 
-    img {
-        width: 180px;
+    div > h3 {
+        text-align: unset;
+        margin-bottom: 15px;
     }
 </style>

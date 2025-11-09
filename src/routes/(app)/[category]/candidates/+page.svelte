@@ -1,11 +1,12 @@
 <script lang="ts">
+    import ActionButton from '$components/ActionButton.svelte';
+    import ListSummary from '$components/ListSummary.svelte';
     import type { PageData } from './$types';
 
     let { data }: { data: PageData } = $props();
 </script>
 
 <h1>Листа кандидата за радну групу: { data.selectedCategory.title }</h1>
-
 
 <section>
     <ul>
@@ -20,11 +21,14 @@
         {/each}
     </ul>
 
-    <p>Укупно кандидата: { data.candidates.length }</p>
+    <ListSummary totalCount={data.candidates.length} />
 
-    <a class="button-link" href="/{data.selectedCategory.slug}/members/new">Предложите кандидата</a>
+    <ActionButton 
+        link={`/${data.selectedCategory.slug}/members/new`}
+        image={'add-person'}
+        message={'Предложите кандидата'}
+    />
 </section>
-
 
 <style>
     section {

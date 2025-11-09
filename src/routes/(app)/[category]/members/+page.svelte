@@ -1,10 +1,12 @@
 <script lang="ts">
+    import ActionButton from '$components/ActionButton.svelte';
+    import ListSummary from '$components/ListSummary.svelte';
     import type { PageData } from './$types';
 
     let { data }: { data: PageData } = $props();
 </script>
 
-<h1>Радна група за: { data.selectedCategory.title }</h1>
+<h1>Чланови радне групе у области: { data.selectedCategory.title }</h1>
 
 <section>
     <ul>
@@ -19,9 +21,13 @@
         {/each}
     </ul>
 
-    <p>Укупно чланова: { data.members.length }</p>
+    <ListSummary totalCount={data.members.length} />
 
-    <a class="button-link" href="/{data.selectedCategory.slug}/members/new">Додајте члана</a>
+    <ActionButton
+        link={`/${data.selectedCategory.slug}/members/new`}
+        image={'add-person'}
+        message={'Додајте члана'}
+    />
 </section>
 
 <style>

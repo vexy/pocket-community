@@ -45,7 +45,7 @@
     { proposal?.description }
 </section>
 
-<p>Процењени трошкови: { proposal?.budget.toLocaleString() }</p>
+<p>Процењени трошкови спровођења предлога: { proposal?.budget.toLocaleString() }</p>
 
 <details>
     <summary>Радна група</summary>
@@ -83,12 +83,10 @@
 </summary>
 
 <style>
-    h1, h4 {
-        text-align: center;
-    }
-
     section {
         min-height: 250px;
+        margin-inline: 0.5rem;
+        padding: 0.25rem;
         border: 0.5px solid black
     }
 
@@ -101,6 +99,10 @@
     summary {
         margin-top: 2.5rem;
         text-align: center;
+    }
+
+    p {
+        margin-left: 0.5rem;
     }
 
     div {
