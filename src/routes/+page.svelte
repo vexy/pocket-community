@@ -1,6 +1,6 @@
 <script lang="ts">
     import type { LayoutProps } from './$types';
-    import '$styles/main.css'
+    // import '$styles/main.css'
     import Footer from '$components/Footer.svelte';
 
     const { data }: LayoutProps = $props();
