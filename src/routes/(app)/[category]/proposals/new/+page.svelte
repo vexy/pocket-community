@@ -6,7 +6,7 @@
 
 <h1>Нови предлог</h1>
 
-<form method="POST" action="?/submitProposal">
+<form method="POST" action="?/submitProposal" class="card">
     <label for="title">Наслов:</label>
     <input type="text" placeholder="Унесите наслов предлога" id="title" name="title"/>
     
@@ -52,7 +52,9 @@
         font-family: inherit;
         font-size: inherit;
         text-rendering: inherit;
-        min-height: 210px;
+
+        field-sizing: content;
+        min-height: 7lh;
     }
 
     .people-list {

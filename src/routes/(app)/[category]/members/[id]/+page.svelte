@@ -17,6 +17,7 @@
         const dialog = document.getElementById("dialogBox") as HTMLDialogElement
 
         if(flag) {
+            // dialog.showPopover()
             dialog.showModal();
         } else {
             dialog.close();
@@ -24,11 +25,11 @@
     }
 </script>
 
-<dialog id="dialogBox">
+<dialog id="dialogBox" popover='auto'>
     <p>Хвала што сте гласали !</p>
     <p>Ваш избор је: {voteOption}</p>
 
-    <button onclick={() => showDialog(false)}>Затвори</button>
+    <button commandfor='dialogBox' command='close'>Затвори</button>
 </dialog>
 
 <img class='candidate-image' src="/person.svg" alt="Person profile"/>
@@ -39,7 +40,7 @@
     <span>{ data.memberData?.lastName }</span>
 </h2>
 
-<summary>
+<section class='card'>
     <div>
         <h3>Радна биографија</h3>
         { data.memberData?.biography }
@@ -56,13 +57,9 @@
             sustain={() => processVote(2)}
         />
     {/if}
-</summary>
+</section>
 
 <style>
-    summary {
-        margin-left: 1.25rem;
-    }
-
     div > h3 {
         text-align: unset;
         margin-bottom: 15px;

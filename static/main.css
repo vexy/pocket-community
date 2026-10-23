@@ -1,0 +1,82 @@
+:root {
+    /* General font */
+    font-family: "Noto Sans Display", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+
+    /* COLORS */
+    --nav-background: #249824;
+    --nav-hover: #2ec12e;
+    --button-background: #6161c1;
+    --action-button: #24985e;
+    --card-background: #f0f0f0;
+    --dialog-border: #8f8f8f;
+
+    --floral-white: #FFFAF0;
+    --forest-green: #228B22;
+    --french-beige: #A67B5B;
+    --french-bistre: #856D4D;
+    --french-blue: #0072BB;
+    --french-fuchsia: #FD3F92;
+    --french-lilac: #86608E;
+    --french-lime: #9EFD38;
+    --french-mauve: #D473D4;
+    --french-pink: #FD6C9E;
+    --french-raspberry: #C72C48;
+    --french-skyblue: #77B5FE;
+    --french-violet: #8806CE;
+    --frostbite: #E936A7;
+    --flirt: #A2006D;
+}
+
+body {
+    margin: 0;
+    min-height: 100svh;
+
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+h1, h2, h3, h4 {
+    text-align: center;
+}
+
+.card {
+    border-radius: 10px;
+    padding: 0.75rem;
+    background: var(--card-background);
+    box-shadow: 0px 1px 2px 1px gray;
+}
+
+.submit-button {
+    align-self: center;
+
+    padding: 0.45rem;
+    margin: 0.5rem;
+    border-radius: 10px;
+    border: none;
+
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+
+    color: white;
+    background: var(--button-background);
+    font-size: 14px;
+}
+
+.candidate-image {
+    display: block;
+    margin-inline: auto;
+    margin-block: 1.2rem;
+    height: 170px;
+}
+
+dialog {
+    border: 1px solid var(--dialog-border);
+    padding: 1rem;
+    align-content: center;
+}

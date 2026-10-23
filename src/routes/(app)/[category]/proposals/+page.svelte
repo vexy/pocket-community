@@ -5,13 +5,20 @@
 
     let { data }: PageProps = $props();
 
-    const currentCategory = data.selectedCategory;
-    const currentSlug = currentCategory.slug
+    const currentCategory = $derived(data.selectedCategory);
+    const currentSlug = $derived(currentCategory.slug)
 </script>
 
-<h2>Листа предлога за усвајање</h2>
+<header>
+  <h2>Предлози заједнице</h2>
+</header>
 
-<div class='action-bar'>
+<ProposalsTable
+    proposals={data.activeProposals}
+    currentSlug={currentSlug}
+/>
+
+<section class='action-bar' aria-label="Proposal actions">
   <ActionButton
       link={`/${currentSlug}/proposals/new`}
       image={'add-new'}
@@ -23,13 +30,7 @@
       image={'document-list'}
       message={'Изгласани предлози'}
   />
-</div>
-
-<ProposalsTable
-  proposals={data.activeProposals}
-  currentSlug={currentSlug}
-  showStatus={false}
-/>
+</section>
 
 <style>
   .action-bar {

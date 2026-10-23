@@ -5,40 +5,41 @@
 </script>
 
 <nav>
-    <div class='lead-navigation'>
-        <!-- TODO: convert into navigation link with platform logo -->
+    <header>
         <a href="/">
             <img src="/favicon.svg" alt="Platform logo" height="30px" />
         </a>
-        <h3>Тренутна категорија: <i>{category.title}</i></h3>
-    </div>
+        <h3>{category.title}</h3>
+    </header>
 
-    <div class='category-actions'>
+    <section class='category-actions'>
         <a href="/{category.slug}/proposals">Предлози</a>
         <a href="/{category.slug}/members">Чланови</a>
         <a href="/{category.slug}/candidates">Кандидати</a>
-    </div>
+    </section>
 </nav>
 
 <style>
     nav {
         width: 100vw;
-        padding-top: 10px;
+        padding-block: 10px;
+        position: sticky;
+        top: 0;
 
         display: flex;
         flex-direction: column;
-        gap: 0.3rem;
+        gap: 0.25rem;
 
-        /* background: linear-gradient(0deg,rgba(42, 155, 76, 1) 0%, rgba(87, 199, 133, 1) 50%); */
-        background: rgb(36, 152, 36);
+        background: var(--nav-background);
     }
 
     h3 {
+        height: fit-content;
         margin-block: 0.25rem;
         color: white
     }
 
-    .lead-navigation {
+    header {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -46,18 +47,25 @@
     }
 
     .category-actions {
-        width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        padding-bottom: 7px;
-        /* background-color: #a4de9c; */
-    }
 
-    a {
-        color: white;
-        margin-inline: 5px;
-        width: fit-content;
-        --webkit-line-clamp: 1;
+        a {
+            padding: 5px;
+            text-decoration: none;
+            text-transform: uppercase;
+            margin-inline: 5px;
+            color: white;
+            border-radius: 5px;
+            --webkit-line-clamp: 1;
+
+            transition: 0.15s ease-out;
+
+            &:hover {
+                transform: translateY(-10%);
+                background: var(--nav-hover);
+            }
+        }
     }
 </style>

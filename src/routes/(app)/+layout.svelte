@@ -1,7 +1,6 @@
 <script lang="ts">
     import type { Snippet } from 'svelte';
     import type { LayoutData } from './$types';
-    import '$styles/main.css'
     import Footer from '$components/Footer.svelte';
     import Navigation from '$components/Navigation.svelte';
 
@@ -21,5 +20,6 @@
 <style>
     main {
         flex-grow: 1;
+        margin: 0.5rem;
     }
 </style>

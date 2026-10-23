@@ -13,7 +13,7 @@ const proposal1: Proposal = {
         against: 156,
         sustained: 14
     },
-    state: ProposalState.IN_PROGRESS,
+    state: ProposalState.IN_DISCUSSION,
     date: new Date,
     members: loadSchoolMembers()
 }
@@ -29,7 +29,7 @@ const proposal2: Proposal = {
         against: 419,
         sustained: 9
     },
-    state: ProposalState.IN_PROGRESS,
+    state: ProposalState.IMPLEMENTING,
     date: new Date,
     members: loadSchoolMembers()
 }
@@ -38,7 +38,7 @@ const proposal3: Proposal = {
     id: 3,
     categoryID: 1,
     title: "Промена наставног програма",
-    description: "Предлог за промену наставног програма. (Детаљи ће бити приказани овде)",
+    description: "Предлог за промену наставног програма. \nПромена наставне парадигме из учења базираног на складиштељу и репродукцији података на критичко размишљање, подстицање дискусије и примену сазнања у пракси.",
     budget: 2500000,
     scores: {
         for: 11304,
@@ -71,14 +71,14 @@ const proposal_hc_1: Proposal = {
     id: 5,
     categoryID: 2,
     title: "Смањење листе чекања за операције кука",
-    description: "Предлог за смањење времена проведеног до операције....",
+    description: "Предлог за смањење времена проведеног до операције базиран на примени модерног медицинског информационог система.\nСистем би био пропраћен једноставним системом заказивања прегледа код лекара опште праксе, који би аутоматски медицинске податке проследио лекару специјалисти.",
     budget: 14750000,
     scores: {
         for: 1245800,
         against: 901,
         sustained: 0
     },
-    state: ProposalState.IN_PROGRESS,
+    state: ProposalState.IN_DISCUSSION,
     date: new Date,
     members: loadHelthcareMembers()
 }
@@ -87,14 +87,14 @@ const proposal_hc_2: Proposal = {
     id: 6,
     categoryID: 2,
     title: "Изградња новог породилишта у Сопоту",
-    description: "Детаљи предлога ће бити приказани овде...",
+    description: "Ново породилиште је потребно грађанима Сопота !\n\nМодерно опремљен акушерски центар капацитета 100 породиља.",
     budget: 3850000,
     scores: {
         for: 18300,
         against: 331,
         sustained: 19
     },
-    state: ProposalState.IN_PROGRESS,
+    state: ProposalState.ACCEPTED,
     date: new Date,
     members: loadHelthcareMembers()
 }
@@ -103,7 +103,7 @@ const proposal_hc_3: Proposal = {
     id: 7,
     categoryID: 2,
     title: "Набавка 3 нова Гама ножа",
-    description: "Предлог за расписивање тендера о набавци Гама ножева од страних произвођача",
+    description: "Предлог за расписивање тендера о набавци Гама ножева од страних корпорација",
     budget: 650000,
     scores: {
         for: 18300,
@@ -143,7 +143,7 @@ const proposal_ec_1: Proposal = {
         against: 3207,
         sustained: 110
     },
-    state: ProposalState.IN_PROGRESS,
+    state: ProposalState.IN_VOTING,
     date: new Date,
     members: loadEconomyMembers()
 }
@@ -152,14 +152,14 @@ const proposal_ec_2: Proposal = {
     id: 10,
     categoryID: 3,
     title: "Порекло имовине",
-    description: "Увођење строжијих правила о пореклу имовине...",
+    description: "Увођење строжијих правила о пореклу имовине, лустрације и конфискације противправно стечене имовине",
     budget: 0,
     scores: {
         for: 2301433,
         against: 302865,
         sustained: 1044
     },
-    state: ProposalState.IN_PROGRESS,
+    state: ProposalState.IN_VOTING,
     date: new Date,
     members: loadEconomyMembers()
 }
@@ -184,7 +184,7 @@ const proposal_ec_4: Proposal = {
     id: 12,
     categoryID: 3,
     title: "Увођење задруга",
-    description: "Предлог за увођење задруга у пољопривреди",
+    description: "Предлог за увођење моденизованих задруга у пољопривреди",
     budget: 3170000,
     scores: {
         for: 245931,
@@ -201,14 +201,14 @@ const proposal_sc_1: Proposal = {
     id: 13,
     categoryID: 4,
     title: "Научна конференција о новим методама лечења рака",
-    description: "Предлог за организовање међународне конференције у Вршцу, која окупља лекаре из разних земаља...",
+    description: "Предлог за организовање међународне конференције у Вршцу, која окупља лекаре онкологије из земаља у региону земаља",
     budget: 5000000,
     scores: {
         for: 146245,
         against: 3207,
         sustained: 110
     },
-    state: ProposalState.IN_PROGRESS,
+    state: ProposalState.ACCEPTED,
     date: new Date,
     members: []
 }
@@ -224,7 +224,7 @@ const proposal_sc_2: Proposal = {
         against: 302865,
         sustained: 1044
     },
-    state: ProposalState.IN_PROGRESS,
+    state: ProposalState.PROPOSED,
     date: new Date,
     members: []
 }
@@ -232,8 +232,8 @@ const proposal_sc_2: Proposal = {
 const proposal_sc_3: Proposal = {
     id: 15,
     categoryID: 4,
-    title: "Наставак постојања Академије наука",
-    description: "У овом предлогу покушавамо да сачувамо постојање Академије наука",
+    title: "Наставак постојања САНУ",
+    description: "У овом предлогу покушавамо да сачувамо постојање Српске Академије наука",
     budget: 0,
     scores: {
         for: 14506,
@@ -248,15 +248,15 @@ const proposal_sc_3: Proposal = {
 const proposal_sc_4: Proposal = {
     id: 16,
     categoryID: 4,
-    title: "Неки научни предлог...",
-    description: "Детаљи предлога су приказани овде...",
+    title: "Примена нове врсте бетона",
+    description: "Најновија научна истраживања показују да нова врста бетона може довести до смањења потрошње бензина",
     budget: 0,
     scores: {
         for: 245931,
         against: 1094,
         sustained: 112
     },
-    state: ProposalState.ACCEPTED,
+    state: ProposalState.IN_VOTING,
     date: new Date,
     members: []
 }
@@ -273,7 +273,7 @@ const sports_1: Proposal = {
         against: 940112,
         sustained: 511
     },
-    state: ProposalState.IN_PROGRESS,
+    state: ProposalState.IN_VOTING,
     date: new Date,
     members: loadSportMembers()
 }
@@ -331,14 +331,14 @@ const env_1: Proposal = {
     id: 21,
     categoryID: 6,
     title: "Нуклеарни отпад",
-    description: "Предлог за елиминацију нуклеарног отпада из земље...",
+    description: "Предлог за елиминацију нуклеарног отпада из земље и успостављање строжијих закона за прекршиоце",
     budget: 5680000,
     scores: {
         for: 3109763,
         against: 201500,
         sustained: 704
     },
-    state: ProposalState.IN_PROGRESS,
+    state: ProposalState.IN_DISCUSSION,
     date: new Date,
     members: []
 }
@@ -380,14 +380,14 @@ const culture_1: Proposal = {
     id: 24,
     categoryID: 7,
     title: "Снимање ТВ серије о Светом Сави",
-    description: "Предлог за отпочињање снимања ТВ серије у више сезона...",
+    description: "Предлог за отпочињање снимања ТВ серије о Цветом Сави у више сезона. Доступан и на интернету.",
     budget: 2500000,
     scores: {
         for: 3109763,
         against: 1201500,
         sustained: 704
     },
-    state: ProposalState.IN_PROGRESS,
+    state: ProposalState.IMPLEMENTING,
     date: new Date,
     members: []
 }
@@ -396,7 +396,7 @@ const culture_2: Proposal = {
     id: 25,
     categoryID: 7,
     title: "Изградња новог позоришта у Краљеву",
-    description: "Предлог за изградњу новог позоришта у центру Краљева...",
+    description: "Предлог за изградњу новог позоришта у центру Краљева, на месту некадашњег Дома културе",
     budget: 3000000,
     scores: {
         for: 5734901,
@@ -419,7 +419,7 @@ const culture_3: Proposal = {
         against: 1004681,
         sustained: 711
     },
-    state: ProposalState.IN_PROGRESS,
+    state: ProposalState.IN_DISCUSSION,
     date: new Date,
     members: []
 }
@@ -436,7 +436,7 @@ const other_1: Proposal = {
         against: 1201500,
         sustained: 704
     },
-    state: ProposalState.IN_PROGRESS,
+    state: ProposalState.PROPOSED,
     date: new Date,
     members: []
 }
@@ -445,14 +445,14 @@ const other_2: Proposal = {
     id: 28,
     categoryID: 8,
     title: "Увођење борилачких вештина у основне школе",
-    description: "Детаљи предлога су приказани овде....",
+    description: "Изборни предмет у основним и средњим школама",
     budget: 250000,
     scores: {
         for: 3109763,
         against: 1201500,
         sustained: 704
     },
-    state: ProposalState.IN_PROGRESS,
+    state: ProposalState.IN_VOTING,
     date: new Date,
     members: []
 }
@@ -461,14 +461,14 @@ const other_3: Proposal = {
     id: 29,
     categoryID: 8,
     title: "Реконструкција Ботаничког центра у Чачку",
-    description: "Предлог за реконструкцију....",
+    description: "Предлог за реконструкцију и детаљи ће бити приказани овде...",
     budget: 710000,
     scores: {
         for: 3109763,
         against: 1201500,
         sustained: 704
     },
-    state: ProposalState.IN_PROGRESS,
+    state: ProposalState.IN_VOTING,
     date: new Date,
     members: []
 }

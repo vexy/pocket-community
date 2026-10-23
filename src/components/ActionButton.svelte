@@ -2,30 +2,35 @@
     const { link, image, message }: {link: string, image: string, message: string} = $props();
 </script>
 
-<a class="button-link" href={link}>
+<a href={link} class="card">
     <img src={`/${image}.svg`} alt="Action" />
     <span>{message}</span>
 </a>
 
 <style>
-    .button-link {
+    a {
         padding: 0.45rem;
         color: white;
-        background-color: #52a293;
+        background-color: var(--action-button);
         border-radius: 10px;
+
+        text-decoration: none;
+        letter-spacing: -0.2px;
 
         display: flex;
         flex-direction: row;
         align-items: center;
         gap: 0.5rem;
         margin-inline: 0.25rem;
-    }
 
-    .button-link > img {
-        height: 30px;
-    }
+        font-size: 0.9rem;
 
-    .button-link:hover {
-        scale: 1.05;
+        &:hover {
+            scale: 1.05;
+        }
+
+        > img {
+            height: 30px;
+        }
     }
 </style>

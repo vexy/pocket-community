@@ -1,4 +1,4 @@
-import type { Member } from "./Member"
+import type { Member } from "$models/Member"
 
 export interface Proposal {
     id: number,
@@ -19,7 +19,11 @@ interface ProposalScores {
 }
 
 export enum ProposalState {
-    ACCEPTED = 0,
+    PROPOSED,
+    IN_DISCUSSION,
+    IN_VOTING,
+    ACCEPTED,
     DENIED,
-    IN_PROGRESS
+    IMPLEMENTING,
+    IN_REVIEW
 }

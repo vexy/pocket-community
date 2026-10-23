@@ -7,11 +7,10 @@ import { getMember } from "./MembersService";
 let allProposals: Proposal[] = loadDummyProposals();
 let lastIndex = 29;
 
-export function getCategoryProposals(categoryID: number, inState: ProposalState): Proposal[] {
+export function getCategoryProposals(categoryID: number): Proposal[] {
     const categoryProposals = allProposals.filter((proposal) => {
         const result =
-            proposal.categoryID === categoryID &&
-            proposal.state === inState
+            proposal.categoryID === categoryID
 
         return result
     })
@@ -54,7 +53,7 @@ function constructNewProposal(categoryID: number, title: string, description: st
         description: description,
         budget: budget,
         scores: { for: 0, against: 0, sustained: 0},
-        state: ProposalState.IN_PROGRESS,
+        state: ProposalState.PROPOSED,
         date: new Date,
         members: members
     }
@@ -65,12 +64,42 @@ function constructNewProposal(categoryID: number, title: string, description: st
 export function statusString(proposalState: ProposalState): string {
     let returnValue = ""
     switch (proposalState) {
+        case ProposalState.PROPOSED:
+            returnValue = "ПРЕДЛОЖЕН"; break;
+        case ProposalState.IN_DISCUSSION:
+            returnValue = "У РАЗМАТРАЊУ"; break;
+        case ProposalState.IN_VOTING:
+            returnValue = "НА ГЛАСАЊУ"; break;
         case ProposalState.ACCEPTED:
             returnValue = "УСВОЈЕН"; break;
         case ProposalState.DENIED:
             returnValue = "ОДБИЈЕН"; break;
-        case ProposalState.IN_PROGRESS:
-            returnValue = "У ИЗГЛАСАВАЊУ"; break;
+        case ProposalState.IMPLEMENTING:
+            returnValue = "У СПРОВОЂЕЊУ"; break;
+        case ProposalState.IN_REVIEW:
+            returnValue = "У ПРОВЕРИ"; break;
+    }
+
+    return returnValue;
+}
+
+export function colorFor(proposalState: ProposalState): string {
+    let returnValue = ""
+    switch (proposalState) {
+        case ProposalState.PROPOSED:
+            returnValue = '#eed67c'; break;
+        case ProposalState.IN_DISCUSSION:
+            returnValue = '#6b447a'; break;
+        case ProposalState.IN_VOTING:
+            returnValue = '#6cd2a4'; break;
+        case ProposalState.ACCEPTED:
+            returnValue = '#07633e'; break;
+        case ProposalState.DENIED:
+            returnValue = '#ca4471'; break;
+        case ProposalState.IMPLEMENTING:
+            returnValue = '#0c033e'; break;
+        case ProposalState.IN_REVIEW:
+            returnValue = '#b1770b'; break;
     }
 
     return returnValue;

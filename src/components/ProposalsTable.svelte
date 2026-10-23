@@ -1,8 +1,15 @@
 <script lang="ts">
-    import { statusString } from "$lib/ProposalService";
+    import { colorFor, statusString } from "$lib/ProposalService";
     import { ProposalState, type Proposal } from "$models/Proposal";
 
-    let { proposals, currentSlug, showStatus }: { proposals: Proposal[], currentSlug: string, showStatus: boolean } = $props()
+    let {
+      proposals,
+      currentSlug,
+    } :
+    {
+      proposals: Proposal[],
+      currentSlug: string,
+    } = $props()
 
     // Function will sumup all the proposals budget that are either
     // in accepted or in progress state
@@ -21,10 +28,7 @@
     <thead>
       <tr>
         <th>Предлог</th>
-        <th>Датум</th>
-        {#if showStatus}
-          <th>Статус</th>
-        {/if}
+        <th>Статус</th>
         <th>Трошкови увођења</th>
       </tr>
     </thead>
@@ -33,10 +37,12 @@
       {#each proposals as proposal }
         <tr>
           <td><a href="/{currentSlug}/proposals/{proposal.id}" >{ proposal.title }</a></td>
-          <td class="centered-text">{proposal.date.toLocaleDateString()}</td>
-          {#if showStatus}
-            <td class="centered-text">{ statusString(proposal.state) }</td>
-          {/if}
+          <td
+            class="centered-text"
+            style="color: {colorFor(proposal.state)}"
+          >
+            { statusString(proposal.state) }
+          </td>
           <td class="right-centered">{ proposal.budget.toLocaleString() }</td>
         </tr>
       {/each}      
@@ -44,11 +50,11 @@
 
     <tfoot>
       <tr>
-        <th scope="row" colspan={ showStatus ? 3 : 2 }>Укупни трошкови</th>
+        <th scope="row" colspan='2'>Укупни трошкови</th>
         <td class="right-centered">{totalCosts().toLocaleString()}</td>
       </tr>
       <tr>
-        <th scope="row" colspan={ showStatus ? 3 : 2 }>Укупно предлога</th>
+        <th scope="row" colspan='2'>Укупно предлога</th>
         <td class="right-centered">{proposals.length.toLocaleString()}</td>
       </tr>
     </tfoot>
@@ -61,6 +67,7 @@
         width: 95%;
 
         border-collapse: collapse;
+        overflow: hidden;
     }
 
     th, td {
