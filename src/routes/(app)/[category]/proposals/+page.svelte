@@ -25,11 +25,11 @@
       message={'Додајте нови предлог'}
   />
 
-  <ActionButton
+  <!-- <ActionButton
       link={`/${currentSlug}/historical`}
       image={'document-list'}
       message={'Изгласани предлози'}
-  />
+  /> -->
 </section>
 
 <style>
